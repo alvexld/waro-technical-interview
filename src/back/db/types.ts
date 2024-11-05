@@ -39,8 +39,20 @@ export namespace Db {
    */
   export type Tag = "Usine A" | "Usine B" | "Fournisseur A" | "Fournisseur B";
 
+  type Material = {
+    id: string;
+    weight: number;
+    name: string;
+    recycled: number;
+  };
+
   export type Modelisation = {
     id: string;
     // ... many other fields
+
+    material: Material[];
+    formatting: {
+      type: "KNITTED" | "WOVEN";
+    }[];
   };
 }
